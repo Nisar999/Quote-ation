@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Quote-ation</string>
+    <string name="generate_new_quote">Generate New Quote</string>
+    <string name="press_the_button_to_be_enlightened">Press the button to be Enlightened!</string>
+</resources>
