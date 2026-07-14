@@ -1,20 +1,30 @@
 package com.example.quote_ation;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.work.Constraints;
+import androidx.work.NetworkType;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -26,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView quoteTextView, authorTextView;
     private Button generateButton;
+    private ImageButton copyButton, shareButton;
     private ProgressBar progressBar;
     private OkHttpClient client;
     private static final String API_URL = "https://api.quotable.io/random";
@@ -40,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         authorTextView = findViewById(R.id.authorText);
         generateButton = findViewById(R.id.fetchQuoteButton);
         progressBar = findViewById(R.id.progressBar);
+        copyButton = findViewById(R.id.copyButton);
+        shareButton = findViewById(R.id.shareButton);
 
         client = new OkHttpClient();
 
@@ -47,6 +60,48 @@ public class MainActivity extends AppCompatActivity {
         fetchRandomQuote();
 
         generateButton.setOnClickListener(v -> fetchRandomQuote());
+
+        copyButton.setOnClickListener(v -> copyToClipboard());
+        shareButton.setOnClickListener(v -> shareQuote());
+
+        setupDailyNotifications();
+    }
+
+    private void copyToClipboard() {
+        String textToCopy = quoteTextView.getText().toString() + " " + authorTextView.getText().toString();
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("Quote", textToCopy);
+        if (clipboard != null) {
+            clipboard.setPrimaryClip(clip);
+            Toast.makeText(this, R.string.quote_copied, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void shareQuote() {
+        String shareText = quoteTextView.getText().toString() + " " + authorTextView.getText().toString();
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, shareText);
+        sendIntent.setType("text/plain");
+        Intent shareIntent = Intent.createChooser(sendIntent, null);
+        startActivity(shareIntent);
+    }
+
+    private void setupDailyNotifications() {
+        Constraints constraints = new Constraints.Builder()
+                .setRequiredNetworkType(NetworkType.CONNECTED)
+                .build();
+
+        PeriodicWorkRequest notificationWork = new PeriodicWorkRequest.Builder(
+                QuoteWorker.class, 24, TimeUnit.HOURS)
+                .setConstraints(constraints)
+                .build();
+
+        WorkManager.getInstance(this).enqueueUniquePeriodicWork(
+                "DailyQuoteWork",
+                androidx.work.ExistingPeriodicWorkPolicy.KEEP,
+                notificationWork
+        );
     }
 
     private void fetchRandomQuote() {

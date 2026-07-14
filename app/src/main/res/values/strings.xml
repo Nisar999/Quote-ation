@@ -2,4 +2,9 @@
     <string name="app_name">Quote-ation</string>
     <string name="generate_new_quote">Generate New Quote</string>
     <string name="press_the_button_to_be_enlightened">Press the button to be Enlightened!</string>
+    <string name="copy_to_clipboard">Copy to clipboard</string>
+    <string name="share_quote">Share quote</string>
+    <string name="quote_copied">Quote copied to clipboard!</string>
+    <string name="daily_quote_channel_name">Daily Inspiration</string>
+    <string name="daily_quote_channel_desc">Daily notification with a handpicked quote</string>
 </resources>
