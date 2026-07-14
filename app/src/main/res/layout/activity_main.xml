@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA"
+    android:background="@drawable/liquid_gradient"
     android:padding="24dp">
 
     <TextView
@@ -12,9 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="Quote-ation"
-        android:textColor="#333333"
+        android:text="@string/app_name"
+        android:textColor="#FFFFFF"
         android:textSize="28sp"
+        android:shadowColor="#40000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
         android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
@@ -23,12 +27,13 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         app:cardCornerRadius="24dp"
-        app:cardElevation="8dp"
-        app:cardBackgroundColor="#FFFFFF">
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@android:color/transparent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/glass_background"
             android:orientation="vertical"
             android:padding="32dp">
 
@@ -39,9 +44,11 @@
                 android:lineSpacingExtra="8dp"
                 android:text="Fetching inspiration..."
                 android:textAlignment="center"
-                android:textColor="#2D3436"
-                android:textSize="20sp"
-                android:textStyle="italic" />
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="italic"
+                android:shadowColor="#20000000"
+                android:shadowRadius="2" />
 
             <TextView
                 android:id="@+id/authorText"
@@ -49,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:textAlignment="center"
-                android:textColor="#636E72"
+                android:textColor="#E0E0E0"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -65,9 +72,9 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="Copy to clipboard"
+                    android:contentDescription="@string/copy_to_clipboard"
                     android:src="@android:drawable/ic_menu_edit"
-                    app:tint="#6C5CE7" />
+                    app:tint="#FFFFFF" />
 
                 <ImageButton
                     android:id="@+id/shareButton"
@@ -75,9 +82,9 @@
                     android:layout_height="48dp"
                     android:layout_marginStart="16dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="Share quote"
+                    android:contentDescription="@string/share_quote"
                     android:src="@android:drawable/ic_menu_share"
-                    app:tint="#6C5CE7" />
+                    app:tint="#FFFFFF" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -89,7 +96,58 @@
         android:layout_below="@id/quoteCard"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:indeterminateTint="#FFFFFF" />
+
+    <LinearLayout
+        android:id="@+id/reminderRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="96dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@android:color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/glass_background"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/reminderText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/reminder_not_set"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/setReminderButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#4DFFFFFF"
+                    android:text="@string/set_reminder"
+                    android:textColor="#FFFFFF"
+                    android:textAllCaps="false"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/fetchQuoteButton"
@@ -97,11 +155,12 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="#6C5CE7"
-        android:text="New Quote"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/generate_new_quote"
         android:textAllCaps="false"
-        android:textColor="#FFFFFF"
+        android:textColor="#6C5CE7"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:cornerRadius="16dp" />
 
 </RelativeLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Quote-ation</string>
+    <string name="app_name">Quotely</string>
     <string name="generate_new_quote">Generate New Quote</string>
     <string name="press_the_button_to_be_enlightened">Press the button to be Enlightened!</string>
     <string name="copy_to_clipboard">Copy to clipboard</string>
@@ -7,4 +7,19 @@
     <string name="quote_copied">Quote copied to clipboard!</string>
     <string name="daily_quote_channel_name">Daily Inspiration</string>
     <string name="daily_quote_channel_desc">Daily notification with a handpicked quote</string>
+    <string name="reminder_not_set">Reminder: Not set</string>
+    <string name="reminder_set_for">Reminder: %1$s</string>
+    <string name="set_reminder">Set Reminder</string>
+    <string name="daily_reminder_set">Daily reminder set</string>
+    <string name="widget_loading">Loading quote...</string>
+    <string name="widget_error">Unable to load quote</string>
+    <string name="customize_widget">Customize Widget</string>
+    <string name="custom_quote_label">Custom Quote (Leave blank for random)</string>
+    <string name="custom_quote_placeholder">Type your quote here...</string>
+    <string name="style_label">Widget Style</string>
+    <string name="style_moonlit">Moonlit Glass</string>
+    <string name="style_aurora">Aurora Mist</string>
+    <string name="style_sapphire">Sapphire Pulse</string>
+    <string name="add_widget">Add Widget</string>
+    <string name="refresh">Refresh quote</string>
 </resources>

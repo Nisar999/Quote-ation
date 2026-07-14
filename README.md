@@ -1,7 +1,5 @@
-# Quote-ation 🌟
-
-**Quote-ation** is a modern Android application designed to inspire you daily. It fetches random, high-quality quotes from various authors and presents them in a beautiful, animated interface.
-
+# Quotely 🌟
+**Quotely** is a modern Android application designed to inspire you daily. It features a liquid glassmorphism interface, curated anime/manga and philosophical quotes, daily reminder notifications, and a customizable home screen widget with a refresh control.
 ## ✨ Features
 - **Instant Inspiration**: Fetch new quotes with a single tap.
 - **Beautiful UI**: Smooth fade-in animations and Material 3 design.

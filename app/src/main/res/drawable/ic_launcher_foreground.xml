@@ -4,14 +4,22 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- Speech Bubble Shape -->
+    <!-- Sleep icon (Moon) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M24,24 h60 a8,8 0 0 1 8,8 v36 a8,8 0 0 1 -8,8 h-36 l-12,12 v-12 h-12 a8,8 0 0 1 -8,-8 v-36 a8,8 0 0 1 8,-8 z" />
+        android:pathData="M30,35 A15,15 0 1,0 45,50 A12,12 0 1,1 30,35 Z" />
 
-    <!-- Quotation Marks -->
+    <!-- Wake icon (Sun) -->
     <path
-        android:fillColor="#6C5CE7"
-        android:pathData="M42,42 c0,6 -4,8 -4,8 l-2,0 c0,-6 4,-8 4,-8 M52,42 c0,6 -4,8 -4,8 l-2,0 c0,-6 4,-8 4,-8 M68,58 c0,-6 4,-8 4,-8 l2,0 c0,6 -4,8 -4,8 M58,58 c0,-6 4,-8 4,-8 l2,0 c0,6 -4,8 -4,8" />
+        android:fillColor="#FFFFFF"
+        android:pathData="M65,35 M65,25 L65,28 M72,28 L70,30 M75,35 L72,35 M72,42 L70,40 M65,45 L65,42 M58,42 L60,40 M55,35 L58,35 M58,28 L60,30" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M65,35 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
+
+    <!-- Repeat icon (Circular arrow) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,65 C45,65 38,72 38,81 C38,90 45,97 54,97 C63,97 70,90 70,81 L66,81 C66,88 61,93 54,93 C47,93 42,88 42,81 C42,74 47,69 54,69 L54,73 L60,67 L54,61 L54,65 Z" />
 
 </vector>

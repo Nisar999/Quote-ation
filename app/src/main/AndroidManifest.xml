@@ -24,6 +24,14 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".QuoteWidgetConfigureActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
         <receiver
             android:name=".QuoteWidget"
             android:exported="true">
@@ -33,6 +41,14 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/quote_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".NotificationReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.quote_ation.DAILY_QUOTE_ALARM" />
+            </intent-filter>
         </receiver>
 
     </application>
