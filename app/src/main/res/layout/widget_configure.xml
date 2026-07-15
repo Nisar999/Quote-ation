@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/liquid_gradient"
-    android:padding="24dp">
+    android:padding="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="24dp"
+            app:cardCornerRadius="28dp"
             app:cardElevation="0dp">
 
             <LinearLayout
@@ -24,84 +24,100 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/glass_background"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="32dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/customize_widget"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/custom_quote_label"
-                    android:textColor="#E0E0E0" />
-
-                <EditText
-                    android:id="@+id/customQuoteEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/custom_quote_placeholder"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#80FFFFFF"
-                    android:backgroundTint="#FFFFFF"
-                    android:minLines="3"
-                    android:gravity="top" />
+                    android:textColor="@color/text_primary"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.02" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:text="@string/custom_quote_label"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:letterSpacing="0.01" />
+
+                <EditText
+                    android:id="@+id/customQuoteEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/custom_quote_placeholder"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/glass_border"
+                    android:backgroundTint="@color/primary_purple"
+                    android:minLines="3"
+                    android:gravity="top"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="4dp"
+                    android:padding="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
                     android:text="@string/style_label"
-                    android:textColor="#E0E0E0" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:letterSpacing="0.01" />
 
                 <RadioGroup
                     android:id="@+id/styleGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="12dp"
                     android:orientation="vertical">
 
                     <RadioButton
                         android:id="@+id/styleMoonlit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:buttonTint="#FFFFFF"
+                        android:buttonTint="@color/primary_purple"
                         android:text="@string/style_moonlit"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"
+                        android:paddingVertical="8dp" />
 
                     <RadioButton
                         android:id="@+id/styleAurora"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:buttonTint="#FFFFFF"
+                        android:buttonTint="@color/primary_purple"
                         android:text="@string/style_aurora"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"
+                        android:paddingVertical="8dp" />
 
                     <RadioButton
                         android:id="@+id/styleSapphire"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:buttonTint="#FFFFFF"
+                        android:buttonTint="@color/primary_purple"
                         android:text="@string/style_sapphire"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"
+                        android:paddingVertical="8dp" />
                 </RadioGroup>
 
                 <Button
                     android:id="@+id/addWidgetButton"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:backgroundTint="#FFFFFF"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/text_primary"
                     android:text="@string/add_widget"
-                    android:textColor="#6C5CE7"
+                    android:textColor="@color/primary_purple"
                     android:textStyle="bold"
-                    app:cornerRadius="12dp" />
+                    android:textSize="16sp"
+                    android:letterSpacing="0.02"
+                    app:cornerRadius="16dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>

@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Neutral Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="off_white">#FFF5F5F7</color>
+    <color name="dark_bg">#FF0F0F0F</color>
+    <color name="dark_surface">#FF1A1A1A</color>
+    
+    <!-- Primary Brand Colors -->
+    <color name="primary_purple">#FF7C3AED</color>
+    <color name="primary_indigo">#FF6366F1</color>
+    <color name="primary_violet">#FF8B5CF6</color>
+    
+    <!-- Accent Colors -->
+    <color name="accent_cyan">#FF06B6D4</color>
+    <color name="accent_blue">#FF0EA5E9</color>
+    <color name="accent_pink">#FFEC4899</color>
+    
+    <!-- Glass Effects -->
+    <color name="glass_light">#4DFFFFFF</color>
+    <color name="glass_border">#80FFFFFF</color>
+    <color name="glass_dark">#1A1A1A99</color>
+    <color name="glass_dark_border">#4D666666</color>
+    
+    <!-- Semantic Colors -->
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#FFE0E0E0</color>
+    <color name="text_tertiary">#FFB0B0B0</color>
 </resources>
