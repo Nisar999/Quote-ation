@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/glass_background"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="20dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,29 +21,34 @@
             android:gravity="center"
             android:maxLines="4"
             android:text="Tap to get inspired!"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:textStyle="italic" />
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:lineSpacingExtra="6dp"
+            android:fontFamily="serif" />
 
         <ImageButton
             android:id="@+id/widgetRefreshButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/refresh"
             android:src="@android:drawable/ic_popup_sync"
-            app:tint="#80FFFFFF" />
+            android:scaleType="centerInside"
+            app:tint="@color/text_primary"
+            android:alpha="0.85" />
     </RelativeLayout>
 
     <TextView
         android:id="@+id/widgetAuthorText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:gravity="end"
-        android:textColor="#E0E0E0"
-        android:textSize="12sp"
-        android:textStyle="bold" />
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.02" />
 </LinearLayout>
